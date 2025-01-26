@@ -1,31 +1,27 @@
+import sessionReducer from './session';
+import spotsReducer from './spots';
+import reviewsReducer from './reviews'
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
-import thunk from 'redux-thunk';
+import { thunk } from 'redux-thunk';
 
-
-//ROOT REDUCER
 const rootReducer = combineReducers({
-    // No reducers yet, keep this empty for now
-  });
+  session: sessionReducer,
+  spots: spotsReducer,
+  reviews: reviewsReducer,
+});
 
-//ENCHANCER
-  let enhancer;
-
+let enhancer;
 if (import.meta.env.MODE === 'production') {
-  enhancer = applyMiddleware(thunk);  // Only use thunk in production
+  enhancer = applyMiddleware(thunk);
 } else {
   const logger = (await import("redux-logger")).default;
   const composeEnhancers =
-    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;  // Use Redux DevTools if available
-  enhancer = composeEnhancers(applyMiddleware(thunk, logger));  // Use both thunk and logger in development
+    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+  enhancer = composeEnhancers(applyMiddleware(thunk, logger));
 }
 
-//CONFIGURESTORE
-
 const configureStore = (preloadedState) => {
-    return createStore(rootReducer, preloadedState, enhancer);
-  };
+  return createStore(rootReducer, preloadedState, enhancer);
+};
 
-
-
-  //EXPORTS
-  export default configureStore;
+export default configureStore;

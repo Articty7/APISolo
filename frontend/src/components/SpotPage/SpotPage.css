@@ -1,0 +1,30 @@
+.spot-page {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 30px;
+}
+
+.page-title {
+    display: flex;
+    justify-content: start;
+}
+
+.address {
+    margin: 0px 0px 15px;
+}
+
+.host-name {
+    margin: 15px 0px;
+}
+
+.about-box {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px
+}
+
+.reserve-box {
+    display: flex;
+    flex-direction: column;
+    border: 1.5px solid;
+}

@@ -1,0 +1,59 @@
+ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid;
+    padding: 10px;
+    margin: 0px;
+}
+
+li {
+    display: flex;
+}
+
+.dropdown {
+    display: flex;
+    flex-direction: column;
+}
+
+.home-icon {
+    font-size: 30px
+}
+
+li {
+    display: flex;
+    align-items: center;
+}
+
+.home-icon-text {
+    text-decoration: none;
+}
+
+.new-spot-link {
+    text-decoration: none;
+    padding: 0px 15px;
+}
+
+.profile-dropdown {
+    display: flex;
+    position: fixed;
+    background: black;
+    border: 1px solid;
+    top: 50px;
+    right: 5px;
+}
+
+.manage {
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    margin: 4px 0px;
+    padding: 3px 0px;
+}
+
+.manage-link {
+    text-decoration: none;
+}
+
+.hidden {
+    display: none
+}
